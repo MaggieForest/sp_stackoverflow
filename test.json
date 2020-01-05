@@ -1,0 +1,886 @@
+[{
+  "_id" : { "$oid" : "5de60a8f6c82b1dfd45bbcfb" },
+  "q_owner" : {
+    "badge_counts" : {
+      "bronze" : 4,
+      "silver" : 0,
+      "gold" : 0
+    },
+    "reputation" : 41,
+    "user_id" : 9298012,
+    "user_type" : "registered",
+    "profile_image" : "https://lh4.googleusercontent.com/-K_6jH0E0SeI/AAAAAAAAAAI/AAAAAAAAAAA/H6n9KoEFzio/photo.jpg?sz=128",
+    "display_name" : "Ibrahim Faiq",
+    "link" : "https://stackoverflow.com/users/9298012/ibrahim-faiq"
+  },
+  "q_accepted_answer_id" : null,
+  "q_answer_count" : 0,
+  "q_body" : "<p>I have implemented RamDirectory with StandandAnalyzer, and am storing places data in Lucene cache, I have added data in Lucene like below :</p>\n\n<pre><code>final Document document = new Document();\n\nfinal IndexableField id = new StringField(\"placeId\", place.getPlaceId(), Field.Store.YES);\nfinal IndexableField name = new TextField(\"name\", place.getName().toLowerCase(), Field.Store.YES);\nfinal IndexableField location = new LatLonPoint(\"location\", place.getLatitude(), place.getLongitude());\nfinal IndexableField city = new StringField(\"city\", place.getCity(), Field.Store.YES);\n\ndocument.add(id);\ndocument.add(name);\ndocument.add(location);\ndocument.add(city);\n</code></pre>\n\n<p>I've implemented two approaches to search the data, One is nearby places in defined radius, which works well, and another is to search places by name. \nAnd we have to implement autocomplete feature on search by name as well.</p>\n\n<p>I've implemented search by name as follows:</p>\n\n<pre><code>QueryParser parser = new QueryParser(\"name\", analyzer);\nreturn parser.createPhraseQuery(\"name\", searchStr, 2);\n</code></pre>\n\n<p>Now I have a place with name Lets say \"Tom clinic and pharmacy\".</p>\n\n<p>If I search using following phrases I get the result back:</p>\n\n<ol>\n<li>Tom</li>\n<li>Tom clinic</li>\n<li>Tom pharmacy</li>\n</ol>\n\n<p>Which is great, but if a user types \"Tom clini\" or \"Tom pharma\", Lucene gives me no results back. </p>\n\n<p>I have tried to add a \"*\" at the end of the searchStr, tried passing the phrase to a wildcardQuery(which works fine on a single word, but fails on multiple words).</p>\n\n<p>Also I would like to add fuzziness a bit so typos can be handled, I'm new to Lucene and not sure what to do from here, so help me out anyhow you can!</p>\n\n<p>P.S Its Lucene 7.3</p>\n",
+  "q_body_markdown" : "I have implemented RamDirectory with StandandAnalyzer, and am storing places data in Lucene cache, I have added data in Lucene like below :\r\n    \r\n    final Document document = new Document();\r\n\r\n\tfinal IndexableField id = new StringField(&quot;placeId&quot;, place.getPlaceId(), Field.Store.YES);\r\n\tfinal IndexableField name = new TextField(&quot;name&quot;, place.getName().toLowerCase(), Field.Store.YES);\r\n\tfinal IndexableField location = new LatLonPoint(&quot;location&quot;, place.getLatitude(), place.getLongitude());\r\n\tfinal IndexableField city = new StringField(&quot;city&quot;, place.getCity(), Field.Store.YES);\r\n\r\n\tdocument.add(id);\r\n\tdocument.add(name);\r\n\tdocument.add(location);\r\n\tdocument.add(city);\r\n\r\nI&#39;ve implemented two approaches to search the data, One is nearby places in defined radius, which works well, and another is to search places by name. \r\nAnd we have to implement autocomplete feature on search by name as well.\r\n\r\nI&#39;ve implemented search by name as follows:\r\n\r\n    QueryParser parser = new QueryParser(&quot;name&quot;, analyzer);\r\n\treturn parser.createPhraseQuery(&quot;name&quot;, searchStr, 2);\r\n\t\r\nNow I have a place with name Lets say &quot;Tom clinic and pharmacy&quot;.\r\n\r\nIf I search using following phrases I get the result back:\r\n\r\n 1. Tom\r\n 2. Tom clinic\r\n 3. Tom pharmacy\r\n\r\nWhich is great, but if a user types &quot;Tom clini&quot; or &quot;Tom pharma&quot;, Lucene gives me no results back. \r\n\r\nI have tried to add a &quot;*&quot; at the end of the searchStr, tried passing the phrase to a wildcardQuery(which works fine on a single word, but fails on multiple words).\r\n\r\nAlso I would like to add fuzziness a bit so typos can be handled, I&#39;m new to Lucene and not sure what to do from here, so help me out anyhow you can!\r\n\r\nP.S Its Lucene 7.3\r\n\r\n\r\n",
+  "q_bounty_amount" : 50,
+  "q_bounty_closes_date" : 1575957377,
+  "q_bounty_user" : {
+    "badge_counts" : {
+      "bronze" : 8,
+      "silver" : 0,
+      "gold" : 0
+    },
+    "reputation" : 98,
+    "user_id" : 2101998,
+    "user_type" : "registered",
+    "accept_rate" : 50,
+    "profile_image" : "https://i.stack.imgur.com/PSZaO.png?s=128&g=1",
+    "display_name" : "Nitesh",
+    "link" : "https://stackoverflow.com/users/2101998/nitesh"
+  },
+  "q_can_close" : false,
+  "q_can_flag" : false,
+  "q_close_vote_count" : 0,
+  "q_closed_date" : null,
+  "q_closed_details" : null,
+  "q_closed_reason" : null,
+  "q_comment_count" : 3,
+  "q_community_owned_date" : null,
+  "q_creation_date" : 1523799357,
+  "q_delete_vote_count" : 0,
+  "q_down_vote_count" : 0,
+  "q_downvoted" : false,
+  "q_favorite_count" : 0,
+  "q_favorited" : false,
+  "q_is_answered" : false,
+  "q_last_activity_date" : 1575352577,
+  "q_last_edit_date" : null,
+  "q_link" : "https://stackoverflow.com/questions/49842537/lucene-phrase-query-with-incomplete-words",
+  "q_locked_date" : null,
+  "q_migrated_from" : null,
+  "q_migrated_to" : null,
+  "q_notice" : {
+    "owner_user_id" : 2101998,
+    "creation_date" : 1575352577,
+    "body" : "<p>I don&#39;t find any sufficient explanatory answer/tutorials on the web. Please spare some time to help.</p>"
+  },
+  "q_protected_date" : null,
+  "q_question_id" : 49842537,
+  "q_reopen_vote_count" : 0,
+  "q_score" : 1,
+  "q_share_link" : "https://stackoverflow.com/q/49842537/10803795",
+  "q_tags" : ["java", "lucene"],
+  "q_title" : "Lucene Phrase query with incomplete words",
+  "q_up_vote_count" : 1,
+  "q_upvoted" : false,
+  "q_view_count" : 125,
+  "q_closed" : 0,
+  "answers" : null,
+  "comments" : [{
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 21,
+          "silver" : 10,
+          "gold" : 1
+        },
+        "reputation" : 2184,
+        "user_id" : 1383753,
+        "user_type" : "registered",
+        "accept_rate" : 70,
+        "profile_image" : "https://i.stack.imgur.com/Quc2L.png?s=128&g=1",
+        "display_name" : "manuj",
+        "link" : "https://stackoverflow.com/users/1383753/manuj"
+      },
+      "upvoted" : false,
+      "edited" : false,
+      "score" : 0,
+      "post_type" : "question",
+      "creation_date" : 1523802416,
+      "post_id" : 49842537,
+      "comment_id" : 86700614,
+      "link" : "https://stackoverflow.com/questions/49842537/lucene-phrase-query-with-incomplete-words#comment86700614_49842537"
+    }, {
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 4,
+          "silver" : 0,
+          "gold" : 0
+        },
+        "reputation" : 41,
+        "user_id" : 9298012,
+        "user_type" : "registered",
+        "profile_image" : "https://lh4.googleusercontent.com/-K_6jH0E0SeI/AAAAAAAAAAI/AAAAAAAAAAA/H6n9KoEFzio/photo.jpg?sz=128",
+        "display_name" : "Ibrahim Faiq",
+        "link" : "https://stackoverflow.com/users/9298012/ibrahim-faiq"
+      },
+      "reply_to_user" : {
+        "badge_counts" : {
+          "bronze" : 21,
+          "silver" : 10,
+          "gold" : 1
+        },
+        "reputation" : 2184,
+        "user_id" : 1383753,
+        "user_type" : "registered",
+        "accept_rate" : 70,
+        "profile_image" : "https://i.stack.imgur.com/Quc2L.png?s=128&g=1",
+        "display_name" : "manuj",
+        "link" : "https://stackoverflow.com/users/1383753/manuj"
+      },
+      "upvoted" : false,
+      "edited" : false,
+      "score" : 0,
+      "post_type" : "question",
+      "creation_date" : 1523805088,
+      "post_id" : 49842537,
+      "comment_id" : 86701469,
+      "link" : "https://stackoverflow.com/questions/49842537/lucene-phrase-query-with-incomplete-words#comment86701469_49842537"
+    }, {
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 21,
+          "silver" : 10,
+          "gold" : 1
+        },
+        "reputation" : 2184,
+        "user_id" : 1383753,
+        "user_type" : "registered",
+        "accept_rate" : 70,
+        "profile_image" : "https://i.stack.imgur.com/Quc2L.png?s=128&g=1",
+        "display_name" : "manuj",
+        "link" : "https://stackoverflow.com/users/1383753/manuj"
+      },
+      "upvoted" : false,
+      "edited" : false,
+      "score" : 0,
+      "post_type" : "question",
+      "creation_date" : 1523827923,
+      "post_id" : 49842537,
+      "comment_id" : 86708887,
+      "link" : "https://stackoverflow.com/questions/49842537/lucene-phrase-query-with-incomplete-words#comment86708887_49842537"
+    }]
+},
+{
+  "_id" : { "$oid" : "5de60a8f6c82b1dfd45bbcfc" },
+  "q_owner" : {
+    "badge_counts" : {
+      "bronze" : 6,
+      "silver" : 0,
+      "gold" : 0
+    },
+    "reputation" : 65,
+    "user_id" : 5910581,
+    "user_type" : "registered",
+    "profile_image" : "https://lh3.googleusercontent.com/-_iGxisby6gc/AAAAAAAAAAI/AAAAAAAAAZY/0Qv03z2j-eY/photo.jpg?sz=128",
+    "display_name" : "M Stefan Walker",
+    "link" : "https://stackoverflow.com/users/5910581/m-stefan-walker"
+  },
+  "q_accepted_answer_id" : 48604048,
+  "q_answer_count" : 1,
+  "q_body" : "<p>I'm writing a client server application and I want to both read and write on one socket from two different threads (one thread for reading, one for writing). I have the system nearly working, but there is one perplexing bug that I can't seem to wrap my head around. Reading and writing work perfect independent of each other, but when I start reading from the <code>Socket</code>'s <code>OutputStream</code> in one thread, all calls to write to the <code>InputStream</code> in a different thread block indefinitely.</p>\n\n<p>I've written a small test program for quickly reproducing the issue and to eliminate as many external variables as I could. I use <code>java.nio</code>'s <code>ServerSocketChannel</code> and <code>SocketChannel</code> to set up the connection and I use <code>java.io</code>'s <code>Socket</code> (the underlying socket of a <code>SocketChannel</code>) for its ease of use with <code>ObjectInputStream</code> and <code>ObjectOutputStream</code>. The test program is designed to run twice; for the first run, the user inputs <code>s</code> to launch the server and on the second run the user inputs <code>c</code> to run the client.</p>\n\n<p><b>My question is:</b> Why does execution of the below program block on the second call to <code>objectOutput.writeObject( message );</code> in the <code>server()</code> method? (fourth to last line in that method)</p>\n\n<p>I've included the expected outputs and actual outputs and what I think they mean below the program code.</p>\n\n<pre><code>import java.io.IOException;\nimport java.io.ObjectInput;\nimport java.io.ObjectInputStream;\nimport java.io.ObjectOutput;\nimport java.io.ObjectOutputStream;\nimport java.io.Serializable;\nimport java.net.InetSocketAddress;\nimport java.net.Socket;\nimport java.nio.channels.ServerSocketChannel;\nimport java.nio.channels.SocketChannel;\nimport java.util.Scanner;\n\npublic class Main {\n\n    private static final String IP_ADDRESS = \"localhost\";\n    private static final int WELL_KNOWN_PORT = 4000;\n\n    public static void main( String... args ) throws Exception {\n        Scanner scanner = new Scanner( System.in );\n        System.out.print( \"choose (s)erver or (c)lient: \" );\n        char choice = scanner.nextLine().charAt( 0 );\n        switch ( choice ) {\n        case 's':\n            server();\n            break;\n        case 'c':\n            client();\n            break;\n        default:\n            break;\n        }\n        scanner.close();\n    }\n\n    private static void server() throws Exception {\n\n        // initialize connection\n\n        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();\n        serverSocketChannel.bind( new InetSocketAddress( WELL_KNOWN_PORT ) );\n        System.out.println( \"waiting for client to connect\" );\n        SocketChannel socketChannel = serverSocketChannel.accept();\n        System.out.println( \"client connected\" );\n        socketChannel.configureBlocking( true );\n        while ( !socketChannel.finishConnect() )\n            Thread.sleep( 100 );\n        Socket socket = socketChannel.socket();\n        ObjectOutput objectOutput = new ObjectOutputStream( socket.getOutputStream() );\n\n        // write first object to stream\n\n        Message message = new Message( 1 );\n        System.out.println( \"writing first object to object output stream: \" + message );\n        objectOutput.writeObject( message );\n        System.out.println( \"first object written to object output stream\" );\n        objectOutput.flush();\n        System.out.println( \"object output stream flushed\" );\n\n        // start reading in a separate thread\n\n        new Thread( () -&gt; {\n            ObjectInput objectInput = null;\n            try {\n                objectInput = new ObjectInputStream( socket.getInputStream() );\n            } catch ( IOException e ) {\n                e.printStackTrace();\n            }\n            Message messageIn = null;\n            try {\n                System.out.println( \"reading on object input stream\" );\n                messageIn = (Message) objectInput.readObject();\n                System.out.println( \"read object on object input stream: \" + messageIn );\n            } catch ( ClassNotFoundException | IOException e ) {\n                e.printStackTrace();\n            }\n            System.out.println( messageIn );\n        } ).start();\n        Thread.sleep( 100 ); // allow time for object listening to start\n\n        // write second object to stream\n\n        message = new Message( 2 );\n        System.out.println( \"writing second object to object output stream: \" + message );\n        objectOutput.writeObject( message ); // this call seems to block??\n        System.out.println( \"second object written to object output stream\" );\n        objectOutput.flush();\n        System.out.println( \"object output stream flushed\" );\n    }\n\n    private static void client() throws Exception {\n\n        // initialize connection\n\n        SocketChannel socketChannel = SocketChannel.open();\n        socketChannel.configureBlocking( true );\n        socketChannel.connect( new InetSocketAddress( IP_ADDRESS, WELL_KNOWN_PORT ) );\n        while ( !socketChannel.finishConnect() )\n            Thread.sleep( 100 );\n        Socket socket = socketChannel.socket();\n        ObjectOutput objectOutput = new ObjectOutputStream( socket.getOutputStream() );\n        ObjectInput objectInput = new ObjectInputStream( socket.getInputStream() );\n\n        // read first object\n\n        System.out.println( \"reading first object on object input stream\" );\n        Message message = (Message) objectInput.readObject();\n        System.out.println( \"read first object on object input stream: \" + message );\n\n        // read second object\n\n        System.out.println( \"reading second object on object input stream\" );\n        message = (Message) objectInput.readObject();\n        System.out.println( \"read second object on object input stream: \" + message );\n\n        // write confirmation message\n\n        message = new Message( 42 );\n        System.out.println( \"writing confirmation message to object output stream: \" + message );\n        objectOutput.writeObject( message );\n        System.out.println( \"confirmation message written to object output stream\" );\n        objectOutput.flush();\n        System.out.println( \"object output stream flushed\" );\n    }\n\n    private static class Message implements Serializable {\n\n        private static final long serialVersionUID = 5649798518404142034L;\n        private int data;\n\n        public Message( int data ) {\n            this.data = data;\n        }\n\n        @Override\n        public String toString() {\n            return \"\" + data;\n        }\n    }\n}\n</code></pre>\n\n<p><b>Server</b></p>\n\n<p>Expected output:  </p>\n\n<pre><code>choose (s)erver or (c)lient: s\nwaiting for client to connect\nclient connected\nwriting first object to object output stream: 1\nfirst object written to object output stream\nobject output stream flushed\nreading on object input stream\nwriting second object to object output stream: 2\nsecond object written to object output stream\nobject output stream flushed\nread object on object input stream: 42\n</code></pre>\n\n<p>Actual output: </p>\n\n<pre><code>choose (s)erver or (c)lient: s\nwaiting for client to connect\nclient connected\nwriting first object to object output stream: 1\nfirst object written to object output stream\nobject output stream flushed\nreading on object input stream\nwriting second object to object output stream: 2\n</code></pre>\n\n<p>The application successfully sends the first object but blocks indefinitely on the second. The only difference I can see is that the second write call happens while a read operation is in process on a separate thread. My first instinct was that maybe <code>Socket</code>s don't support simultaneous reading and writing from different threads, but my search of Stack Overflow suggests that they do support this simultaneous operation (full duplex). This is the primary reason I'm confused with the operation of the above code.</p>\n\n<p><b>Client</b></p>\n\n<p>Expected output:</p>\n\n<pre><code>choose (s)erver or (c)lient: c\nreading on object input stream\nread first object on object input stream: 1\nreading second object on object input stream\nread second object on object input stream: 2\nwriting confirmation message to object output stream: 42\nconfirmation message written to object output stream\nobject output stream flushed\n</code></pre>\n\n<p>Actual output:</p>\n\n<pre><code>choose (s)erver or (c)lient: c\nreading first object on object input stream\nread first object on object input stream: 1\nreading second object on object input stream\n</code></pre>\n\n<p>This confirms that the first object was successfully sent and received by the client. The client seems to be waiting on the second object which is never sent by the server due to this strange blocking behavior in the server.</p>\n\n<p>Thanks so much in advance for any advice anyone may be able to give. I'm open to rewriting my code if full duplex is easily achievable in another manner, but If there is a solution using the above structure I would much prefer to stick with that for simplicity of not having to refactor large sections of code.</p>\n",
+  "q_body_markdown" : "I&#39;m writing a client server application and I want to both read and write on one socket from two different threads (one thread for reading, one for writing). I have the system nearly working, but there is one perplexing bug that I can&#39;t seem to wrap my head around. Reading and writing work perfect independent of each other, but when I start reading from the `Socket`&#39;s `OutputStream` in one thread, all calls to write to the `InputStream` in a different thread block indefinitely.\r\n\r\nI&#39;ve written a small test program for quickly reproducing the issue and to eliminate as many external variables as I could. I use `java.nio`&#39;s `ServerSocketChannel` and `SocketChannel` to set up the connection and I use `java.io`&#39;s `Socket` (the underlying socket of a `SocketChannel`) for its ease of use with `ObjectInputStream` and `ObjectOutputStream`. The test program is designed to run twice; for the first run, the user inputs `s` to launch the server and on the second run the user inputs `c` to run the client.\r\n\r\n&lt;b&gt;My question is:&lt;/b&gt; Why does execution of the below program block on the second call to `objectOutput.writeObject( message );` in the `server()` method? (fourth to last line in that method)\r\n\r\nI&#39;ve included the expected outputs and actual outputs and what I think they mean below the program code.\r\n\r\n    import java.io.IOException;\r\n    import java.io.ObjectInput;\r\n    import java.io.ObjectInputStream;\r\n    import java.io.ObjectOutput;\r\n    import java.io.ObjectOutputStream;\r\n    import java.io.Serializable;\r\n    import java.net.InetSocketAddress;\r\n    import java.net.Socket;\r\n    import java.nio.channels.ServerSocketChannel;\r\n    import java.nio.channels.SocketChannel;\r\n    import java.util.Scanner;\r\n    \r\n    public class Main {\r\n    \r\n    \tprivate static final String IP_ADDRESS = &quot;localhost&quot;;\r\n    \tprivate static final int WELL_KNOWN_PORT = 4000;\r\n    \r\n    \tpublic static void main( String... args ) throws Exception {\r\n    \t\tScanner scanner = new Scanner( System.in );\r\n    \t\tSystem.out.print( &quot;choose (s)erver or (c)lient: &quot; );\r\n    \t\tchar choice = scanner.nextLine().charAt( 0 );\r\n    \t\tswitch ( choice ) {\r\n    \t\tcase &#39;s&#39;:\r\n    \t\t\tserver();\r\n    \t\t\tbreak;\r\n    \t\tcase &#39;c&#39;:\r\n    \t\t\tclient();\r\n    \t\t\tbreak;\r\n    \t\tdefault:\r\n    \t\t\tbreak;\r\n    \t\t}\r\n    \t\tscanner.close();\r\n    \t}\r\n    \r\n    \tprivate static void server() throws Exception {\r\n    \r\n    \t\t// initialize connection\r\n    \r\n    \t\tServerSocketChannel serverSocketChannel = ServerSocketChannel.open();\r\n    \t\tserverSocketChannel.bind( new InetSocketAddress( WELL_KNOWN_PORT ) );\r\n    \t\tSystem.out.println( &quot;waiting for client to connect&quot; );\r\n    \t\tSocketChannel socketChannel = serverSocketChannel.accept();\r\n    \t\tSystem.out.println( &quot;client connected&quot; );\r\n    \t\tsocketChannel.configureBlocking( true );\r\n    \t\twhile ( !socketChannel.finishConnect() )\r\n    \t\t\tThread.sleep( 100 );\r\n    \t\tSocket socket = socketChannel.socket();\r\n    \t\tObjectOutput objectOutput = new ObjectOutputStream( socket.getOutputStream() );\r\n    \r\n    \t\t// write first object to stream\r\n    \r\n    \t\tMessage message = new Message( 1 );\r\n    \t\tSystem.out.println( &quot;writing first object to object output stream: &quot; + message );\r\n    \t\tobjectOutput.writeObject( message );\r\n    \t\tSystem.out.println( &quot;first object written to object output stream&quot; );\r\n    \t\tobjectOutput.flush();\r\n    \t\tSystem.out.println( &quot;object output stream flushed&quot; );\r\n    \r\n    \t\t// start reading in a separate thread\r\n    \r\n    \t\tnew Thread( () -&gt; {\r\n    \t\t\tObjectInput objectInput = null;\r\n    \t\t\ttry {\r\n    \t\t\t\tobjectInput = new ObjectInputStream( socket.getInputStream() );\r\n    \t\t\t} catch ( IOException e ) {\r\n    \t\t\t\te.printStackTrace();\r\n    \t\t\t}\r\n    \t\t\tMessage messageIn = null;\r\n    \t\t\ttry {\r\n    \t\t\t\tSystem.out.println( &quot;reading on object input stream&quot; );\r\n    \t\t\t\tmessageIn = (Message) objectInput.readObject();\r\n    \t\t\t\tSystem.out.println( &quot;read object on object input stream: &quot; + messageIn );\r\n    \t\t\t} catch ( ClassNotFoundException | IOException e ) {\r\n    \t\t\t\te.printStackTrace();\r\n    \t\t\t}\r\n    \t\t\tSystem.out.println( messageIn );\r\n    \t\t} ).start();\r\n    \t\tThread.sleep( 100 ); // allow time for object listening to start\r\n    \r\n    \t\t// write second object to stream\r\n    \r\n    \t\tmessage = new Message( 2 );\r\n    \t\tSystem.out.println( &quot;writing second object to object output stream: &quot; + message );\r\n    \t\tobjectOutput.writeObject( message ); // this call seems to block??\r\n    \t\tSystem.out.println( &quot;second object written to object output stream&quot; );\r\n    \t\tobjectOutput.flush();\r\n    \t\tSystem.out.println( &quot;object output stream flushed&quot; );\r\n    \t}\r\n    \r\n    \tprivate static void client() throws Exception {\r\n    \r\n    \t\t// initialize connection\r\n    \r\n    \t\tSocketChannel socketChannel = SocketChannel.open();\r\n    \t\tsocketChannel.configureBlocking( true );\r\n    \t\tsocketChannel.connect( new InetSocketAddress( IP_ADDRESS, WELL_KNOWN_PORT ) );\r\n    \t\twhile ( !socketChannel.finishConnect() )\r\n    \t\t\tThread.sleep( 100 );\r\n    \t\tSocket socket = socketChannel.socket();\r\n    \t\tObjectOutput objectOutput = new ObjectOutputStream( socket.getOutputStream() );\r\n    \t\tObjectInput objectInput = new ObjectInputStream( socket.getInputStream() );\r\n    \r\n    \t\t// read first object\r\n    \r\n    \t\tSystem.out.println( &quot;reading first object on object input stream&quot; );\r\n    \t\tMessage message = (Message) objectInput.readObject();\r\n    \t\tSystem.out.println( &quot;read first object on object input stream: &quot; + message );\r\n    \r\n    \t\t// read second object\r\n    \r\n    \t\tSystem.out.println( &quot;reading second object on object input stream&quot; );\r\n    \t\tmessage = (Message) objectInput.readObject();\r\n    \t\tSystem.out.println( &quot;read second object on object input stream: &quot; + message );\r\n    \r\n    \t\t// write confirmation message\r\n    \r\n    \t\tmessage = new Message( 42 );\r\n    \t\tSystem.out.println( &quot;writing confirmation message to object output stream: &quot; + message );\r\n    \t\tobjectOutput.writeObject( message );\r\n    \t\tSystem.out.println( &quot;confirmation message written to object output stream&quot; );\r\n    \t\tobjectOutput.flush();\r\n    \t\tSystem.out.println( &quot;object output stream flushed&quot; );\r\n    \t}\r\n    \r\n    \tprivate static class Message implements Serializable {\r\n    \r\n    \t\tprivate static final long serialVersionUID = 5649798518404142034L;\r\n    \t\tprivate int data;\r\n    \r\n    \t\tpublic Message( int data ) {\r\n    \t\t\tthis.data = data;\r\n    \t\t}\r\n    \r\n    \t\t@Override\r\n    \t\tpublic String toString() {\r\n    \t\t\treturn &quot;&quot; + data;\r\n    \t\t}\r\n    \t}\r\n    }\r\n\r\n \r\n&lt;b&gt;Server&lt;/b&gt;\r\n\r\nExpected output:  \r\n\r\n    choose (s)erver or (c)lient: s\r\n    waiting for client to connect\r\n    client connected\r\n    writing first object to object output stream: 1\r\n    first object written to object output stream\r\n    object output stream flushed\r\n    reading on object input stream\r\n    writing second object to object output stream: 2\r\n    second object written to object output stream\r\n    object output stream flushed\r\n    read object on object input stream: 42\r\n\r\nActual output: \r\n\r\n    choose (s)erver or (c)lient: s\r\n    waiting for client to connect\r\n    client connected\r\n    writing first object to object output stream: 1\r\n    first object written to object output stream\r\n    object output stream flushed\r\n    reading on object input stream\r\n    writing second object to object output stream: 2\r\n\r\nThe application successfully sends the first object but blocks indefinitely on the second. The only difference I can see is that the second write call happens while a read operation is in process on a separate thread. My first instinct was that maybe `Socket`s don&#39;t support simultaneous reading and writing from different threads, but my search of Stack Overflow suggests that they do support this simultaneous operation (full duplex). This is the primary reason I&#39;m confused with the operation of the above code.\r\n\r\n&lt;b&gt;Client&lt;/b&gt;\r\n\r\nExpected output:\r\n\r\n    choose (s)erver or (c)lient: c\r\n    reading on object input stream\r\n    read first object on object input stream: 1\r\n    reading second object on object input stream\r\n    read second object on object input stream: 2\r\n    writing confirmation message to object output stream: 42\r\n    confirmation message written to object output stream\r\n    object output stream flushed\r\n\r\nActual output:\r\n\r\n    choose (s)erver or (c)lient: c\r\n    reading first object on object input stream\r\n    read first object on object input stream: 1\r\n    reading second object on object input stream\r\n\r\nThis confirms that the first object was successfully sent and received by the client. The client seems to be waiting on the second object which is never sent by the server due to this strange blocking behavior in the server.\r\n\r\nThanks so much in advance for any advice anyone may be able to give. I&#39;m open to rewriting my code if full duplex is easily achievable in another manner, but If there is a solution using the above structure I would much prefer to stick with that for simplicity of not having to refactor large sections of code.",
+  "q_bounty_amount" : null,
+  "q_bounty_closes_date" : null,
+  "q_bounty_user" : null,
+  "q_can_close" : false,
+  "q_can_flag" : false,
+  "q_close_vote_count" : 0,
+  "q_closed_date" : null,
+  "q_closed_details" : null,
+  "q_closed_reason" : null,
+  "q_comment_count" : 1,
+  "q_community_owned_date" : null,
+  "q_creation_date" : 1517709742,
+  "q_delete_vote_count" : 0,
+  "q_down_vote_count" : 0,
+  "q_downvoted" : false,
+  "q_favorite_count" : 0,
+  "q_favorited" : false,
+  "q_is_answered" : true,
+  "q_last_activity_date" : 1575349116,
+  "q_last_edit_date" : 1517710713,
+  "q_link" : "https://stackoverflow.com/questions/48603980/java-write-call-to-socket-output-stream-blocking-in-full-duplex",
+  "q_locked_date" : null,
+  "q_migrated_from" : null,
+  "q_migrated_to" : null,
+  "q_notice" : null,
+  "q_protected_date" : null,
+  "q_question_id" : 48603980,
+  "q_reopen_vote_count" : 0,
+  "q_score" : 4,
+  "q_share_link" : "https://stackoverflow.com/q/48603980/10803795",
+  "q_tags" : ["java", "sockets", "network-programming", "nio", "socketchannel"],
+  "q_title" : "Java - Write call to socket output stream blocking in full duplex",
+  "q_up_vote_count" : 4,
+  "q_upvoted" : false,
+  "q_view_count" : 501,
+  "q_closed" : 0,
+  "answers" : [{
+      "comments" : [{
+          "owner" : {
+            "badge_counts" : {
+              "bronze" : 6,
+              "silver" : 0,
+              "gold" : 0
+            },
+            "reputation" : 65,
+            "user_id" : 5910581,
+            "user_type" : "registered",
+            "profile_image" : "https://lh3.googleusercontent.com/-_iGxisby6gc/AAAAAAAAAAI/AAAAAAAAAZY/0Qv03z2j-eY/photo.jpg?sz=128",
+            "display_name" : "M Stefan Walker",
+            "link" : "https://stackoverflow.com/users/5910581/m-stefan-walker"
+          },
+          "upvoted" : false,
+          "edited" : false,
+          "score" : 1,
+          "post_type" : "answer",
+          "creation_date" : 1517711127,
+          "post_id" : 48604048,
+          "comment_id" : 84204842,
+          "link" : "https://stackoverflow.com/questions/48603980/java-write-call-to-socket-output-stream-blocking-in-full-duplex/48604048#comment84204842_48604048"
+        }, {
+          "owner" : {
+            "badge_counts" : {
+              "bronze" : 6,
+              "silver" : 0,
+              "gold" : 0
+            },
+            "reputation" : 65,
+            "user_id" : 5910581,
+            "user_type" : "registered",
+            "profile_image" : "https://lh3.googleusercontent.com/-_iGxisby6gc/AAAAAAAAAAI/AAAAAAAAAZY/0Qv03z2j-eY/photo.jpg?sz=128",
+            "display_name" : "M Stefan Walker",
+            "link" : "https://stackoverflow.com/users/5910581/m-stefan-walker"
+          },
+          "upvoted" : false,
+          "edited" : false,
+          "score" : 1,
+          "post_type" : "answer",
+          "creation_date" : 1517711616,
+          "post_id" : 48604048,
+          "comment_id" : 84204917,
+          "link" : "https://stackoverflow.com/questions/48603980/java-write-call-to-socket-output-stream-blocking-in-full-duplex/48604048#comment84204917_48604048"
+        }],
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 392,
+          "silver" : 235,
+          "gold" : 28
+        },
+        "reputation" : 272488,
+        "user_id" : 207421,
+        "user_type" : "registered",
+        "accept_rate" : 82,
+        "profile_image" : "https://www.gravatar.com/avatar/5cfe5f7d64f44be04f147295f5c7b88e?s=128&d=identicon&r=PG",
+        "display_name" : "user207421",
+        "link" : "https://stackoverflow.com/users/207421/user207421"
+      },
+      "last_editor" : {
+        "badge_counts" : {
+          "bronze" : 392,
+          "silver" : 235,
+          "gold" : 28
+        },
+        "reputation" : 272488,
+        "user_id" : 207421,
+        "user_type" : "registered",
+        "accept_rate" : 82,
+        "profile_image" : "https://www.gravatar.com/avatar/5cfe5f7d64f44be04f147295f5c7b88e?s=128&d=identicon&r=PG",
+        "display_name" : "user207421",
+        "link" : "https://stackoverflow.com/users/207421/user207421"
+      },
+      "can_flag" : false,
+      "comment_count" : 2,
+      "accepted" : false,
+      "downvoted" : false,
+      "upvoted" : false,
+      "down_vote_count" : 0,
+      "up_vote_count" : 5,
+      "is_accepted" : true,
+      "score" : 5,
+      "last_activity_date" : 1575349116,
+      "last_edit_date" : 1575349116,
+      "creation_date" : 1517710750,
+      "answer_id" : 48604048,
+      "question_id" : 48603980,
+      "share_link" : "https://stackoverflow.com/a/48604048/10803795",
+      "body_markdown" : "There are so many things wrong with this code I will have to take it line by line:\r\n\r\n    private static void server() throws Exception {\r\n    \r\n            // initialize connection\r\n    \r\n            ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();\r\n            serverSocketChannel.bind( new InetSocketAddress( WELL_KNOWN_PORT ) );\r\n            System.out.println( &quot;waiting for client to connect&quot; );\r\n\r\n            SocketChannel socketChannel = serverSocketChannel.accept();\r\n\r\nThere is nothing above that &#39;initializes a connection&#39;. The client initializes the connection. This code *accepts* it.\r\n\r\n            System.out.println( &quot;client connected&quot; );\r\n            socketChannel.configureBlocking( true );\r\n\r\nThis is the default. You don&#39;t need to assert defaults.\r\n\r\n            while ( !socketChannel.finishConnect() )\r\n                Thread.sleep( 100 );\r\n\r\nYou shouldn&#39;t be calling this. `finishConnect()` is for *clients* that have called `connect()`, in *non-blocking* mode. You are a server, you haven&#39;t called `connect()`, and you aren&#39;t in non-blocking mode. And if you *are* a client in non-blocking mode you shouldn&#39;t call it in a loop with sleeps: you should use `Selector.select()` with `OP_CONNECT`.\r\n\r\n            Socket socket = socketChannel.socket();\r\n            ObjectOutput objectOutput = new ObjectOutputStream( socket.getOutputStream() );\r\n\r\nAs you are using blocking mode and output streams it is impossible to see why you are using `ServerSocketChannel` and `SocketChannel` at all, and as a matter of fact this is at least part of the problem. It is a little-known fact that streams derived from NIO channels use synchronization on the channel for both reading and writing, and they are therefore not full-duplex at all, even though the underlying TCP connection is. Remove all this and rewrite using `ServerSocket` and `Socket`.\r\n    \r\n            // write first object to stream\r\n    \r\n            Message message = new Message( 1 );\r\n            System.out.println( &quot;writing first object to object output stream: &quot; + message );\r\n            objectOutput.writeObject( message );\r\n            System.out.println( &quot;first object written to object output stream&quot; );\r\n            objectOutput.flush();\r\n            System.out.println( &quot;object output stream flushed&quot; );\r\n    \r\n            // start reading in a separate thread\r\n    \r\n            new Thread( () -&gt; {\r\n                ObjectInput objectInput = null;\r\n                try {\r\n                    objectInput = new ObjectInputStream( socket.getInputStream() );\r\n                } catch ( IOException e ) {\r\n                    e.printStackTrace();\r\n                }\r\n\r\nDon&#39;t write code like this. Code like the below that depends on the success of a prior `try` block like the above must be inside that `try` block. Otherwise for example the following code is liable to get `NullPointerExceptions`.\r\n\r\n                Message messageIn = null;\r\n                try {\r\n                    System.out.println( &quot;reading on object input stream&quot; );\r\n                    messageIn = (Message) objectInput.readObject();\r\n                    System.out.println( &quot;read object on object input stream: &quot; + messageIn );\r\n                } catch ( ClassNotFoundException | IOException e ) {\r\n                    e.printStackTrace();\r\n                }\r\n\r\nDitto.\r\n\r\n                System.out.println( messageIn );\r\n            } ).start();\r\n            Thread.sleep( 100 ); // allow time for object listening to start\r\n    \r\n            // write second object to stream\r\n    \r\n            message = new Message( 2 );\r\n            System.out.println( &quot;writing second object to object output stream: &quot; + message );\r\n            objectOutput.writeObject( message ); // this call seems to block??\r\n            System.out.println( &quot;second object written to object output stream&quot; );\r\n            objectOutput.flush();\r\n            System.out.println( &quot;object output stream flushed&quot; );\r\n        }\r\n\r\nSee above for why doing this in separate threads cannot work in the case of streams derived from NIO channels.\r\n    \r\n        private static void client() throws Exception {\r\n    \r\n            // initialize connection\r\n    \r\n            SocketChannel socketChannel = SocketChannel.open();\r\n            socketChannel.configureBlocking( true );\r\n            socketChannel.connect( new InetSocketAddress( IP_ADDRESS, WELL_KNOWN_PORT ) );\r\n            while ( !socketChannel.finishConnect() )\r\n                Thread.sleep( 100 );\r\n\r\nThe last two lines above are pointless, because the connect *has* completed, because you&#39;re in blocking mode.\r\n\r\n            Socket socket = socketChannel.socket();\r\n            ObjectOutput objectOutput = new ObjectOutputStream( socket.getOutputStream() );\r\n            ObjectInput objectInput = new ObjectInputStream( socket.getInputStream() );\r\n    \r\n            // read first object\r\n    \r\n            System.out.println( &quot;reading first object on object input stream&quot; );\r\n            Message message = (Message) objectInput.readObject();\r\n            System.out.println( &quot;read first object on object input stream: &quot; + message );\r\n    \r\n            // read second object\r\n    \r\n            System.out.println( &quot;reading second object on object input stream&quot; );\r\n            message = (Message) objectInput.readObject();\r\n            System.out.println( &quot;read second object on object input stream: &quot; + message );\r\n    \r\n            // write confirmation message\r\n    \r\n            message = new Message( 42 );\r\n            System.out.println( &quot;writing confirmation message to object output stream: &quot; + message );\r\n            objectOutput.writeObject( message );\r\n            System.out.println( &quot;confirmation message written to object output stream&quot; );\r\n            objectOutput.flush();\r\n            System.out.println( &quot;object output stream flushed&quot; );\r\n        }\r\n\r\nYou can use the rest of this as-is, but again the NIO channels are pointless here. You may as well use `Socket`.",
+      "link" : "https://stackoverflow.com/questions/48603980/java-write-call-to-socket-output-stream-blocking-in-full-duplex/48604048#48604048",
+      "title" : "Java - Write call to socket output stream blocking in full duplex",
+      "body" : "<p>There are so many things wrong with this code I will have to take it line by line:</p>\n\n<pre><code>private static void server() throws Exception {\n\n        // initialize connection\n\n        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();\n        serverSocketChannel.bind( new InetSocketAddress( WELL_KNOWN_PORT ) );\n        System.out.println( \"waiting for client to connect\" );\n\n        SocketChannel socketChannel = serverSocketChannel.accept();\n</code></pre>\n\n<p>There is nothing above that 'initializes a connection'. The client initializes the connection. This code <em>accepts</em> it.</p>\n\n<pre><code>        System.out.println( \"client connected\" );\n        socketChannel.configureBlocking( true );\n</code></pre>\n\n<p>This is the default. You don't need to assert defaults.</p>\n\n<pre><code>        while ( !socketChannel.finishConnect() )\n            Thread.sleep( 100 );\n</code></pre>\n\n<p>You shouldn't be calling this. <code>finishConnect()</code> is for <em>clients</em> that have called <code>connect()</code>, in <em>non-blocking</em> mode. You are a server, you haven't called <code>connect()</code>, and you aren't in non-blocking mode. And if you <em>are</em> a client in non-blocking mode you shouldn't call it in a loop with sleeps: you should use <code>Selector.select()</code> with <code>OP_CONNECT</code>.</p>\n\n<pre><code>        Socket socket = socketChannel.socket();\n        ObjectOutput objectOutput = new ObjectOutputStream( socket.getOutputStream() );\n</code></pre>\n\n<p>As you are using blocking mode and output streams it is impossible to see why you are using <code>ServerSocketChannel</code> and <code>SocketChannel</code> at all, and as a matter of fact this is at least part of the problem. It is a little-known fact that streams derived from NIO channels use synchronization on the channel for both reading and writing, and they are therefore not full-duplex at all, even though the underlying TCP connection is. Remove all this and rewrite using <code>ServerSocket</code> and <code>Socket</code>.</p>\n\n<pre><code>        // write first object to stream\n\n        Message message = new Message( 1 );\n        System.out.println( \"writing first object to object output stream: \" + message );\n        objectOutput.writeObject( message );\n        System.out.println( \"first object written to object output stream\" );\n        objectOutput.flush();\n        System.out.println( \"object output stream flushed\" );\n\n        // start reading in a separate thread\n\n        new Thread( () -&gt; {\n            ObjectInput objectInput = null;\n            try {\n                objectInput = new ObjectInputStream( socket.getInputStream() );\n            } catch ( IOException e ) {\n                e.printStackTrace();\n            }\n</code></pre>\n\n<p>Don't write code like this. Code like the below that depends on the success of a prior <code>try</code> block like the above must be inside that <code>try</code> block. Otherwise for example the following code is liable to get <code>NullPointerExceptions</code>.</p>\n\n<pre><code>            Message messageIn = null;\n            try {\n                System.out.println( \"reading on object input stream\" );\n                messageIn = (Message) objectInput.readObject();\n                System.out.println( \"read object on object input stream: \" + messageIn );\n            } catch ( ClassNotFoundException | IOException e ) {\n                e.printStackTrace();\n            }\n</code></pre>\n\n<p>Ditto.</p>\n\n<pre><code>            System.out.println( messageIn );\n        } ).start();\n        Thread.sleep( 100 ); // allow time for object listening to start\n\n        // write second object to stream\n\n        message = new Message( 2 );\n        System.out.println( \"writing second object to object output stream: \" + message );\n        objectOutput.writeObject( message ); // this call seems to block??\n        System.out.println( \"second object written to object output stream\" );\n        objectOutput.flush();\n        System.out.println( \"object output stream flushed\" );\n    }\n</code></pre>\n\n<p>See above for why doing this in separate threads cannot work in the case of streams derived from NIO channels.</p>\n\n<pre><code>    private static void client() throws Exception {\n\n        // initialize connection\n\n        SocketChannel socketChannel = SocketChannel.open();\n        socketChannel.configureBlocking( true );\n        socketChannel.connect( new InetSocketAddress( IP_ADDRESS, WELL_KNOWN_PORT ) );\n        while ( !socketChannel.finishConnect() )\n            Thread.sleep( 100 );\n</code></pre>\n\n<p>The last two lines above are pointless, because the connect <em>has</em> completed, because you're in blocking mode.</p>\n\n<pre><code>        Socket socket = socketChannel.socket();\n        ObjectOutput objectOutput = new ObjectOutputStream( socket.getOutputStream() );\n        ObjectInput objectInput = new ObjectInputStream( socket.getInputStream() );\n\n        // read first object\n\n        System.out.println( \"reading first object on object input stream\" );\n        Message message = (Message) objectInput.readObject();\n        System.out.println( \"read first object on object input stream: \" + message );\n\n        // read second object\n\n        System.out.println( \"reading second object on object input stream\" );\n        message = (Message) objectInput.readObject();\n        System.out.println( \"read second object on object input stream: \" + message );\n\n        // write confirmation message\n\n        message = new Message( 42 );\n        System.out.println( \"writing confirmation message to object output stream: \" + message );\n        objectOutput.writeObject( message );\n        System.out.println( \"confirmation message written to object output stream\" );\n        objectOutput.flush();\n        System.out.println( \"object output stream flushed\" );\n    }\n</code></pre>\n\n<p>You can use the rest of this as-is, but again the NIO channels are pointless here. You may as well use <code>Socket</code>.</p>\n"
+    }],
+  "comments" : [{
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 6,
+          "silver" : 0,
+          "gold" : 0
+        },
+        "reputation" : 65,
+        "user_id" : 5910581,
+        "user_type" : "registered",
+        "profile_image" : "https://lh3.googleusercontent.com/-_iGxisby6gc/AAAAAAAAAAI/AAAAAAAAAZY/0Qv03z2j-eY/photo.jpg?sz=128",
+        "display_name" : "M Stefan Walker",
+        "link" : "https://stackoverflow.com/users/5910581/m-stefan-walker"
+      },
+      "upvoted" : false,
+      "edited" : false,
+      "score" : 0,
+      "post_type" : "question",
+      "creation_date" : 1517710153,
+      "post_id" : 48603980,
+      "comment_id" : 84204691,
+      "link" : "https://stackoverflow.com/questions/48603980/java-write-call-to-socket-output-stream-blocking-in-full-duplex#comment84204691_48603980"
+    }]
+},
+{
+  "_id" : { "$oid" : "5de60a8f6c82b1dfd45bbcfd" },
+  "q_owner" : {
+    "badge_counts" : {
+      "bronze" : 104,
+      "silver" : 63,
+      "gold" : 14
+    },
+    "reputation" : 3112,
+    "user_id" : 146234,
+    "user_type" : "registered",
+    "accept_rate" : 40,
+    "profile_image" : "https://www.gravatar.com/avatar/903ccadd292c66cf8d231d664f753f50?s=128&d=identicon&r=PG",
+    "display_name" : "PacificNW_Lover",
+    "link" : "https://stackoverflow.com/users/146234/pacificnw-lover"
+  },
+  "q_accepted_answer_id" : 50499083,
+  "q_answer_count" : 5,
+  "q_body" : "<p>Am using Java 1.7. </p>\n\n<p>Trying to convert:</p>\n\n<pre><code>2018-05-23T23:18:31.000Z \n</code></pre>\n\n<p>into</p>\n\n<pre><code>2018-05-23 23:18:31\n</code></pre>\n\n<p>DateUtils class:</p>\n\n<pre><code>public class DateUtils {\n\n    public static String convertToNewFormat(String dateStr) throws ParseException {\n        TimeZone utc = TimeZone.getTimeZone(\"UTC\");\n        SimpleDateFormat sdf = new SimpleDateFormat(\"YYYY-MM-dd HH:mm:ss\");\n        sdf.setTimeZone(utc);\n        Date convertedDate = sdf.parse(dateStr);\n        return convertedDate.toString();\n    }\n}\n</code></pre>\n\n<p>When trying to use it:</p>\n\n<pre><code>String convertedDate = DateUtils.convertToNewFormat(\"2018-05-23T23:18:31.000Z\");\nSystem.out.println(convertedDate);\n</code></pre>\n\n<p>Get the following exception:</p>\n\n<pre><code>Exception in thread \"main\" java.text.ParseException: Unparseable date: \"2018-05-23T23:22:16.000Z\"\n   at java.text.DateFormat.parse(DateFormat.java:366)\n   at com.myapp.utils.DateUtils.convertToNewFormat(DateUtils.java:7)\n</code></pre>\n\n<p>What am I possibly doing wrong? </p>\n\n<p>Is there an easier way to do is (e.g. Apache Commons lib)? </p>\n",
+  "q_body_markdown" : "Am using Java 1.7. \r\n\r\nTrying to convert:\r\n \r\n    2018-05-23T23:18:31.000Z \r\n\r\ninto\r\n\r\n    2018-05-23 23:18:31\r\n\r\nDateUtils class:\r\n\r\n\tpublic class DateUtils {\r\n\r\n\t\tpublic static String convertToNewFormat(String dateStr) throws ParseException {\r\n\t\t\tTimeZone utc = TimeZone.getTimeZone(&quot;UTC&quot;);\r\n\t\t\tSimpleDateFormat sdf = new SimpleDateFormat(&quot;YYYY-MM-dd HH:mm:ss&quot;);\r\n\t\t\tsdf.setTimeZone(utc);\r\n\t    \tDate convertedDate = sdf.parse(dateStr);\r\n\t\t\treturn convertedDate.toString();\r\n\t\t}\r\n\t}\r\n\r\nWhen trying to use it:\r\n\r\n\tString convertedDate = DateUtils.convertToNewFormat(&quot;2018-05-23T23:18:31.000Z&quot;);\r\n\tSystem.out.println(convertedDate);\r\n\r\nGet the following exception:\r\n\r\n    Exception in thread &quot;main&quot; java.text.ParseException: Unparseable date: &quot;2018-05-23T23:22:16.000Z&quot;\r\n\t   at java.text.DateFormat.parse(DateFormat.java:366)\r\n\t   at com.myapp.utils.DateUtils.convertToNewFormat(DateUtils.java:7)\r\n\r\nWhat am I possibly doing wrong? \r\n\r\nIs there an easier way to do is (e.g. Apache Commons lib)? ",
+  "q_bounty_amount" : null,
+  "q_bounty_closes_date" : null,
+  "q_bounty_user" : null,
+  "q_can_close" : false,
+  "q_can_flag" : false,
+  "q_close_vote_count" : 0,
+  "q_closed_date" : null,
+  "q_closed_details" : null,
+  "q_closed_reason" : null,
+  "q_comment_count" : 4,
+  "q_community_owned_date" : null,
+  "q_creation_date" : 1527118976,
+  "q_delete_vote_count" : 0,
+  "q_down_vote_count" : 1,
+  "q_downvoted" : false,
+  "q_favorite_count" : 1,
+  "q_favorited" : false,
+  "q_is_answered" : true,
+  "q_last_activity_date" : 1575343165,
+  "q_last_edit_date" : 1527144310,
+  "q_link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java",
+  "q_locked_date" : null,
+  "q_migrated_from" : null,
+  "q_migrated_to" : null,
+  "q_notice" : null,
+  "q_protected_date" : null,
+  "q_question_id" : 50498949,
+  "q_reopen_vote_count" : 0,
+  "q_score" : 4,
+  "q_share_link" : "https://stackoverflow.com/q/50498949/10803795",
+  "q_tags" : ["java", "java-7", "utc", "datetime-parsing", "parseexception"],
+  "q_title" : "How to convert UTC Date String and remove the T and Z in Java?",
+  "q_up_vote_count" : 5,
+  "q_upvoted" : false,
+  "q_view_count" : 11061,
+  "q_closed" : 0,
+  "answers" : [{
+      "comments" : [{
+          "owner" : {
+            "badge_counts" : {
+              "bronze" : 104,
+              "silver" : 63,
+              "gold" : 14
+            },
+            "reputation" : 3112,
+            "user_id" : 146234,
+            "user_type" : "registered",
+            "accept_rate" : 40,
+            "profile_image" : "https://www.gravatar.com/avatar/903ccadd292c66cf8d231d664f753f50?s=128&d=identicon&r=PG",
+            "display_name" : "PacificNW_Lover",
+            "link" : "https://stackoverflow.com/users/146234/pacificnw-lover"
+          },
+          "upvoted" : false,
+          "edited" : false,
+          "score" : 0,
+          "post_type" : "answer",
+          "creation_date" : 1527120178,
+          "post_id" : 50499008,
+          "comment_id" : 88010955,
+          "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50499008#comment88010955_50499008"
+        }, {
+          "owner" : {
+            "badge_counts" : {
+              "bronze" : 35,
+              "silver" : 12,
+              "gold" : 1
+            },
+            "reputation" : 12999,
+            "user_id" : 8486518,
+            "user_type" : "registered",
+            "profile_image" : "https://lh4.googleusercontent.com/-QUM0SNPJsXo/AAAAAAAAAAI/AAAAAAAAABU/3rAlBsd0Qlg/photo.jpg?sz=128",
+            "display_name" : "Mạnh Quyết Nguyễn",
+            "link" : "https://stackoverflow.com/users/8486518/m%e1%ba%a1nh-quy%e1%ba%bft-nguy%e1%bb%85n"
+          },
+          "reply_to_user" : {
+            "badge_counts" : {
+              "bronze" : 104,
+              "silver" : 63,
+              "gold" : 14
+            },
+            "reputation" : 3112,
+            "user_id" : 146234,
+            "user_type" : "registered",
+            "accept_rate" : 40,
+            "profile_image" : "https://www.gravatar.com/avatar/903ccadd292c66cf8d231d664f753f50?s=128&d=identicon&r=PG",
+            "display_name" : "PacificNW_Lover",
+            "link" : "https://stackoverflow.com/users/146234/pacificnw-lover"
+          },
+          "upvoted" : false,
+          "edited" : false,
+          "score" : 0,
+          "post_type" : "answer",
+          "creation_date" : 1527120289,
+          "post_id" : 50499008,
+          "comment_id" : 88010977,
+          "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50499008#comment88010977_50499008"
+        }, {
+          "owner" : {
+            "badge_counts" : {
+              "bronze" : 104,
+              "silver" : 63,
+              "gold" : 14
+            },
+            "reputation" : 3112,
+            "user_id" : 146234,
+            "user_type" : "registered",
+            "accept_rate" : 40,
+            "profile_image" : "https://www.gravatar.com/avatar/903ccadd292c66cf8d231d664f753f50?s=128&d=identicon&r=PG",
+            "display_name" : "PacificNW_Lover",
+            "link" : "https://stackoverflow.com/users/146234/pacificnw-lover"
+          },
+          "upvoted" : false,
+          "edited" : false,
+          "score" : 0,
+          "post_type" : "answer",
+          "creation_date" : 1527137654,
+          "post_id" : 50499008,
+          "comment_id" : 88014834,
+          "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50499008#comment88014834_50499008"
+        }, {
+          "owner" : {
+            "badge_counts" : {
+              "bronze" : 35,
+              "silver" : 12,
+              "gold" : 1
+            },
+            "reputation" : 12999,
+            "user_id" : 8486518,
+            "user_type" : "registered",
+            "profile_image" : "https://lh4.googleusercontent.com/-QUM0SNPJsXo/AAAAAAAAAAI/AAAAAAAAABU/3rAlBsd0Qlg/photo.jpg?sz=128",
+            "display_name" : "Mạnh Quyết Nguyễn",
+            "link" : "https://stackoverflow.com/users/8486518/m%e1%ba%a1nh-quy%e1%ba%bft-nguy%e1%bb%85n"
+          },
+          "reply_to_user" : {
+            "badge_counts" : {
+              "bronze" : 104,
+              "silver" : 63,
+              "gold" : 14
+            },
+            "reputation" : 3112,
+            "user_id" : 146234,
+            "user_type" : "registered",
+            "accept_rate" : 40,
+            "profile_image" : "https://www.gravatar.com/avatar/903ccadd292c66cf8d231d664f753f50?s=128&d=identicon&r=PG",
+            "display_name" : "PacificNW_Lover",
+            "link" : "https://stackoverflow.com/users/146234/pacificnw-lover"
+          },
+          "upvoted" : false,
+          "edited" : false,
+          "score" : 0,
+          "post_type" : "answer",
+          "creation_date" : 1527137832,
+          "post_id" : 50499008,
+          "comment_id" : 88014878,
+          "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50499008#comment88014878_50499008"
+        }],
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 35,
+          "silver" : 12,
+          "gold" : 1
+        },
+        "reputation" : 12999,
+        "user_id" : 8486518,
+        "user_type" : "registered",
+        "profile_image" : "https://lh4.googleusercontent.com/-QUM0SNPJsXo/AAAAAAAAAAI/AAAAAAAAABU/3rAlBsd0Qlg/photo.jpg?sz=128",
+        "display_name" : "Mạnh Quyết Nguyễn",
+        "link" : "https://stackoverflow.com/users/8486518/m%e1%ba%a1nh-quy%e1%ba%bft-nguy%e1%bb%85n"
+      },
+      "can_flag" : false,
+      "comment_count" : 4,
+      "accepted" : false,
+      "downvoted" : false,
+      "upvoted" : false,
+      "down_vote_count" : 0,
+      "up_vote_count" : 0,
+      "is_accepted" : false,
+      "score" : 0,
+      "last_activity_date" : 1527119500,
+      "creation_date" : 1527119500,
+      "answer_id" : 50499008,
+      "question_id" : 50498949,
+      "share_link" : "https://stackoverflow.com/a/50499008/10803795",
+      "body_markdown" : "`YYYY` does not match with year part. In java 7 you need `yyyy`.\r\n\r\nFor `T`, use `&#39;T&#39;` to match it\r\n\r\nYou&#39;re also missing the faction of millsecond part: `.SSS`\r\n\r\nTry this:\r\n\r\n    String dateStr=&quot;2018-05-23T23:18:31.000Z&quot;;\r\n    TimeZone utc = TimeZone.getTimeZone(&quot;UTC&quot;);\r\n    SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;&quot;);\r\n    sdf.setTimeZone(utc);\r\n    Date convertedDate = sdf.parse(dateStr);\r\n    convertedDate.toString();",
+      "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50499008#50499008",
+      "title" : "How to convert UTC Date String and remove the T and Z in Java?",
+      "body" : "<p><code>YYYY</code> does not match with year part. In java 7 you need <code>yyyy</code>.</p>\n\n<p>For <code>T</code>, use <code>'T'</code> to match it</p>\n\n<p>You're also missing the faction of millsecond part: <code>.SSS</code></p>\n\n<p>Try this:</p>\n\n<pre><code>String dateStr=\"2018-05-23T23:18:31.000Z\";\nTimeZone utc = TimeZone.getTimeZone(\"UTC\");\nSimpleDateFormat sdf = new SimpleDateFormat(\"yyy-MM-dd'T'HH:mm:ss.SSS'Z'\");\nsdf.setTimeZone(utc);\nDate convertedDate = sdf.parse(dateStr);\nconvertedDate.toString();\n</code></pre>\n"
+    }, {
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 7,
+          "silver" : 3,
+          "gold" : 0
+        },
+        "reputation" : 376,
+        "user_id" : 5897052,
+        "user_type" : "registered",
+        "profile_image" : "https://lh5.googleusercontent.com/-8avWC3wrrCg/AAAAAAAAAAI/AAAAAAAAA7I/rDqK9vt-gD8/photo.jpg?sz=128",
+        "display_name" : "jkumaranc",
+        "link" : "https://stackoverflow.com/users/5897052/jkumaranc"
+      },
+      "last_editor" : {
+        "badge_counts" : {
+          "bronze" : 7,
+          "silver" : 3,
+          "gold" : 0
+        },
+        "reputation" : 376,
+        "user_id" : 5897052,
+        "user_type" : "registered",
+        "profile_image" : "https://lh5.googleusercontent.com/-8avWC3wrrCg/AAAAAAAAAAI/AAAAAAAAA7I/rDqK9vt-gD8/photo.jpg?sz=128",
+        "display_name" : "jkumaranc",
+        "link" : "https://stackoverflow.com/users/5897052/jkumaranc"
+      },
+      "can_flag" : false,
+      "comment_count" : 0,
+      "accepted" : false,
+      "downvoted" : false,
+      "upvoted" : false,
+      "down_vote_count" : 0,
+      "up_vote_count" : 5,
+      "is_accepted" : true,
+      "score" : 5,
+      "last_activity_date" : 1527136400,
+      "last_edit_date" : 1527136400,
+      "creation_date" : 1527120134,
+      "answer_id" : 50499083,
+      "question_id" : 50498949,
+      "share_link" : "https://stackoverflow.com/a/50499083/10803795",
+      "body_markdown" : "Try this. You have to use one pattern for parsing and another for formatting.\r\n\r\n    public static String convertToNewFormat(String dateStr) throws ParseException {\r\n        TimeZone utc = TimeZone.getTimeZone(&quot;UTC&quot;);\r\n        SimpleDateFormat sourceFormat = new SimpleDateFormat(&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;&quot;);\r\n        SimpleDateFormat destFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);\r\n        sourceFormat.setTimeZone(utc);\r\n        Date convertedDate = sourceFormat.parse(dateStr);\r\n        return destFormat.format(convertedDate);\r\n    }",
+      "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50499083#50499083",
+      "title" : "How to convert UTC Date String and remove the T and Z in Java?",
+      "body" : "<p>Try this. You have to use one pattern for parsing and another for formatting.</p>\n\n<pre><code>public static String convertToNewFormat(String dateStr) throws ParseException {\n    TimeZone utc = TimeZone.getTimeZone(\"UTC\");\n    SimpleDateFormat sourceFormat = new SimpleDateFormat(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\");\n    SimpleDateFormat destFormat = new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\");\n    sourceFormat.setTimeZone(utc);\n    Date convertedDate = sourceFormat.parse(dateStr);\n    return destFormat.format(convertedDate);\n}\n</code></pre>\n"
+    }, {
+      "comments" : [{
+          "owner" : {
+            "badge_counts" : {
+              "bronze" : 663,
+              "silver" : 476,
+              "gold" : 39
+            },
+            "reputation" : 148280,
+            "user_id" : 642706,
+            "user_type" : "registered",
+            "accept_rate" : 58,
+            "profile_image" : "https://i.stack.imgur.com/ZWEI3.jpg?s=128&g=1",
+            "display_name" : "Basil Bourque",
+            "link" : "https://stackoverflow.com/users/642706/basil-bourque"
+          },
+          "upvoted" : false,
+          "edited" : false,
+          "score" : 0,
+          "post_type" : "answer",
+          "creation_date" : 1527138850,
+          "post_id" : 50499108,
+          "comment_id" : 88015161,
+          "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50499108#comment88015161_50499108"
+        }, {
+          "owner" : {
+            "badge_counts" : {
+              "bronze" : 74,
+              "silver" : 52,
+              "gold" : 7
+            },
+            "reputation" : 42240,
+            "user_id" : 5772882,
+            "user_type" : "registered",
+            "profile_image" : "https://i.stack.imgur.com/58mlb.png?s=128&g=1",
+            "display_name" : "Ole V.V.",
+            "link" : "https://stackoverflow.com/users/5772882/ole-v-v"
+          },
+          "upvoted" : false,
+          "edited" : false,
+          "score" : 0,
+          "post_type" : "answer",
+          "creation_date" : 1527139605,
+          "post_id" : 50499108,
+          "comment_id" : 88015424,
+          "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50499108#comment88015424_50499108"
+        }, {
+          "owner" : {
+            "badge_counts" : {
+              "bronze" : 28,
+              "silver" : 15,
+              "gold" : 2
+            },
+            "reputation" : 2366,
+            "user_id" : 1400672,
+            "user_type" : "registered",
+            "accept_rate" : 61,
+            "profile_image" : "https://www.gravatar.com/avatar/3c9df02c88fb746936a594beaa808d25?s=128&d=identicon&r=PG",
+            "display_name" : "Rami.Q",
+            "link" : "https://stackoverflow.com/users/1400672/rami-q"
+          },
+          "reply_to_user" : {
+            "badge_counts" : {
+              "bronze" : 663,
+              "silver" : 476,
+              "gold" : 39
+            },
+            "reputation" : 148280,
+            "user_id" : 642706,
+            "user_type" : "registered",
+            "accept_rate" : 58,
+            "profile_image" : "https://i.stack.imgur.com/ZWEI3.jpg?s=128&g=1",
+            "display_name" : "Basil Bourque",
+            "link" : "https://stackoverflow.com/users/642706/basil-bourque"
+          },
+          "upvoted" : false,
+          "edited" : false,
+          "score" : 0,
+          "post_type" : "answer",
+          "creation_date" : 1527209565,
+          "post_id" : 50499108,
+          "comment_id" : 88052599,
+          "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50499108#comment88052599_50499108"
+        }],
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 28,
+          "silver" : 15,
+          "gold" : 2
+        },
+        "reputation" : 2366,
+        "user_id" : 1400672,
+        "user_type" : "registered",
+        "accept_rate" : 61,
+        "profile_image" : "https://www.gravatar.com/avatar/3c9df02c88fb746936a594beaa808d25?s=128&d=identicon&r=PG",
+        "display_name" : "Rami.Q",
+        "link" : "https://stackoverflow.com/users/1400672/rami-q"
+      },
+      "last_editor" : {
+        "badge_counts" : {
+          "bronze" : 28,
+          "silver" : 15,
+          "gold" : 2
+        },
+        "reputation" : 2366,
+        "user_id" : 1400672,
+        "user_type" : "registered",
+        "accept_rate" : 61,
+        "profile_image" : "https://www.gravatar.com/avatar/3c9df02c88fb746936a594beaa808d25?s=128&d=identicon&r=PG",
+        "display_name" : "Rami.Q",
+        "link" : "https://stackoverflow.com/users/1400672/rami-q"
+      },
+      "can_flag" : false,
+      "comment_count" : 3,
+      "accepted" : false,
+      "downvoted" : false,
+      "upvoted" : false,
+      "down_vote_count" : 0,
+      "up_vote_count" : 3,
+      "is_accepted" : false,
+      "score" : 3,
+      "last_activity_date" : 1527209655,
+      "last_edit_date" : 1527209655,
+      "creation_date" : 1527120414,
+      "answer_id" : 50499108,
+      "question_id" : 50498949,
+      "share_link" : "https://stackoverflow.com/a/50499108/10803795",
+      "body_markdown" : "For others without Java 1.7 Restrictions:\r\n\r\nSince Java 1.8 you can do it using `LocalDateTime` and `ZonedDateTime` from the package `java.time`\r\n\r\n    public static void main(String[] args) {\r\n    \tString sourceDateTime\t\t\t= &quot;2018-05-23T23:18:31.000Z&quot;;\r\n\t\tDateTimeFormatter sourceFormat \t= DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;&quot;);\r\n\t\tDateTimeFormatter targetFormat \t= DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);\r\n\t\t\r\n\t\tLocalDateTime dateTime\t        = LocalDateTime.parse(sourceDateTime, sourceFormat);\r\n\t\tString formatedDateTime         = dateTime.atZone(ZoneId.of(&quot;UTC&quot;)).format(targetFormat);\r\n\t\tSystem.out.println(formatedDateTime);\r\n    }\r\n\r\nEDIT: (see Comments)\r\n\r\nQuote from the Oracle Java documentation of [LocalDateTime][1]:\r\n&gt; LocalDateTime is an immutable date-time object that represents a\r\n&gt; date-time, often viewed as year-month-day-hour-minute-second. Other\r\n&gt; date and time fields, such as day-of-year, day-of-week and\r\n&gt; week-of-year, can also be accessed. Time is represented to nanosecond\r\n&gt; precision. For example, the value &quot;2nd October 2007 at\r\n&gt; 13:45.30.123456789&quot; can be stored in a LocalDateTime.\r\n&gt; \r\n&gt; This class does not store or represent a time-zone. Instead, it is a\r\n&gt; description of the date, as used for birthdays, combined with the\r\n&gt; local time as seen on a wall clock. It cannot represent an instant on\r\n&gt; the time-line without additional information such as an offset or\r\n&gt; time-zone.\r\n\r\nthe OP is asking to JUST parsing an Input String to a date-time (as year-month-day-hour-minute-second) and the Documentation says \r\n\r\n&gt; LocalDateTime ... represents a date-time, often viewed as\r\n&gt; year-month-day-hour-minute-second\r\n\r\nso no important information are lost here. And the part `dateTime.atZone(ZoneId.of(&quot;UTC&quot;))` returns a `ZonedDateTime` so the ZimeZone is handled at this point again if the user needs to work with the timezone ...etc.\r\n\r\nso don&#39;t try to force users to use the &quot;One and Only&quot; solution you present in your answer.\r\n\r\n\r\n  [1]: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html",
+      "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50499108#50499108",
+      "title" : "How to convert UTC Date String and remove the T and Z in Java?",
+      "body" : "<p>For others without Java 1.7 Restrictions:</p>\n\n<p>Since Java 1.8 you can do it using <code>LocalDateTime</code> and <code>ZonedDateTime</code> from the package <code>java.time</code></p>\n\n<pre><code>public static void main(String[] args) {\n    String sourceDateTime           = \"2018-05-23T23:18:31.000Z\";\n    DateTimeFormatter sourceFormat  = DateTimeFormatter.ofPattern(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\");\n    DateTimeFormatter targetFormat  = DateTimeFormatter.ofPattern(\"yyyy-MM-dd HH:mm:ss\");\n\n    LocalDateTime dateTime          = LocalDateTime.parse(sourceDateTime, sourceFormat);\n    String formatedDateTime         = dateTime.atZone(ZoneId.of(\"UTC\")).format(targetFormat);\n    System.out.println(formatedDateTime);\n}\n</code></pre>\n\n<p>EDIT: (see Comments)</p>\n\n<p>Quote from the Oracle Java documentation of <a href=\"https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html\" rel=\"nofollow noreferrer\">LocalDateTime</a>:</p>\n\n<blockquote>\n  <p>LocalDateTime is an immutable date-time object that represents a\n  date-time, often viewed as year-month-day-hour-minute-second. Other\n  date and time fields, such as day-of-year, day-of-week and\n  week-of-year, can also be accessed. Time is represented to nanosecond\n  precision. For example, the value \"2nd October 2007 at\n  13:45.30.123456789\" can be stored in a LocalDateTime.</p>\n  \n  <p>This class does not store or represent a time-zone. Instead, it is a\n  description of the date, as used for birthdays, combined with the\n  local time as seen on a wall clock. It cannot represent an instant on\n  the time-line without additional information such as an offset or\n  time-zone.</p>\n</blockquote>\n\n<p>the OP is asking to JUST parsing an Input String to a date-time (as year-month-day-hour-minute-second) and the Documentation says </p>\n\n<blockquote>\n  <p>LocalDateTime ... represents a date-time, often viewed as\n  year-month-day-hour-minute-second</p>\n</blockquote>\n\n<p>so no important information are lost here. And the part <code>dateTime.atZone(ZoneId.of(\"UTC\"))</code> returns a <code>ZonedDateTime</code> so the ZimeZone is handled at this point again if the user needs to work with the timezone ...etc.</p>\n\n<p>so don't try to force users to use the \"One and Only\" solution you present in your answer.</p>\n"
+    }, {
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 663,
+          "silver" : 476,
+          "gold" : 39
+        },
+        "reputation" : 148280,
+        "user_id" : 642706,
+        "user_type" : "registered",
+        "accept_rate" : 58,
+        "profile_image" : "https://i.stack.imgur.com/ZWEI3.jpg?s=128&g=1",
+        "display_name" : "Basil Bourque",
+        "link" : "https://stackoverflow.com/users/642706/basil-bourque"
+      },
+      "last_editor" : {
+        "badge_counts" : {
+          "bronze" : 663,
+          "silver" : 476,
+          "gold" : 39
+        },
+        "reputation" : 148280,
+        "user_id" : 642706,
+        "user_type" : "registered",
+        "accept_rate" : 58,
+        "profile_image" : "https://i.stack.imgur.com/ZWEI3.jpg?s=128&g=1",
+        "display_name" : "Basil Bourque",
+        "link" : "https://stackoverflow.com/users/642706/basil-bourque"
+      },
+      "can_flag" : false,
+      "comment_count" : 0,
+      "accepted" : false,
+      "downvoted" : false,
+      "upvoted" : false,
+      "down_vote_count" : 0,
+      "up_vote_count" : 7,
+      "is_accepted" : false,
+      "score" : 7,
+      "last_activity_date" : 1527139455,
+      "last_edit_date" : 1527139455,
+      "creation_date" : 1527139085,
+      "answer_id" : 50501489,
+      "question_id" : 50498949,
+      "share_link" : "https://stackoverflow.com/a/50501489/10803795",
+      "body_markdown" : "# tl;dr\r\n\r\n    Instant.parse( &quot;2018-05-23T23:18:31.000Z&quot; )                // Parse this String in standard ISO 8601 format as a `Instant`, a point on the timeline in UTC. The `Z` means UTC.\r\n    .atOffset( ZoneOffset.UTC )                                // Change from `Instant` to the more flexible `OffsetDateTime`.\r\n    .format(                                                   // Generate a String representing the value of this `OffsetDateTime` object.\r\n        DateTimeFormatter.ofPattern( &quot;uuuu-MM-dd HH:mm:ss&quot; )   // Specify a formatting pattern as desired.\r\n    )                                                          // Returns a `String` object.\r\n\r\n&gt;2018-05-23 23:18:31\r\n\r\n# ISO 8601 \r\n\r\nYour input string is in standard [ISO 8601][1] format.\r\n\r\nThe *java.time* classes use these standard formats by default when parsing/generating strings.\r\n\r\nThe `T` separates the year-month-day portion from the hour-minute-second. The `Z` is pronounced `Zulu` and means [UTC][2].\r\n\r\n# java.time\r\n\r\nYou are using troublesome old date-time classes that were supplanted years ago by the *java.time* classes. The Apache `DateUtils` is also no longer needed, as you will find its functionality in *java.time* as well. \r\n\r\nParse that input string as a `Instant` object. The [`Instant`](http://docs.oracle.com/javase/10/docs/api/java/time/Instant.html) class represents a moment on the timeline in [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) with a resolution of [nanoseconds](https://en.wikipedia.org/wiki/Nanosecond) (up to nine (9) digits of a decimal fraction). \r\n\r\n    String input = &quot;2018-05-23T23:18:31.000Z&quot; ;\r\n    Instant instant = Instant.parse( input ) ;\r\n\r\nTo generate a string in another format, we need a more flexible object. The `Instant` class is meant to be a basic building block. Let`s convert it to a `OffsetDateTime`, using UTC itself as the specified offset-from-UTC.\r\n\r\n    OffsetDateTime odt = instant.atOffset( ZoneOffset.UTC ) ; \r\n\r\nDefine a formatting pattern to match your desired output.\r\n\r\n    DateTimeFormatter f = DateTimeFormatter.ofPattern( &quot;uuuu-MM-dd HH:mm:ss&quot; ) ;\r\n    String output = odt.format( f ) ;\r\n\r\nTip: Consider using `DateTimeFormatter::ofLocalized…` methods to automatically localize the String generation per some `Locale` rather than hard-coding a formatting pattern.\r\n\r\n\r\n----------\r\n\r\n# About *java.time*\r\n\r\nThe [*java.time*](http://docs.oracle.com/javase/10/docs/api/java/time/package-summary.html) framework is built into Java 8 and later. These classes supplant the troublesome old [legacy](https://en.wikipedia.org/wiki/Legacy_system) date-time classes such as [`java.util.Date`](https://docs.oracle.com/javase/10/docs/api/java/util/Date.html), [`Calendar`](https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html), &amp; [`SimpleDateFormat`](http://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html).\r\n\r\nThe [*Joda-Time*](http://www.joda.org/joda-time/) project, now in [maintenance mode](https://en.wikipedia.org/wiki/Maintenance_mode), advises migration to the [java.time](http://docs.oracle.com/javase/10/docs/api/java/time/package-summary.html) classes.\r\n\r\nTo learn more, see the [*Oracle Tutorial*](http://docs.oracle.com/javase/tutorial/datetime/TOC.html). And search Stack Overflow for many examples and explanations. Specification is [JSR 310](https://jcp.org/en/jsr/detail?id=310).\r\n\r\nYou may exchange *java.time* objects directly with your database. Use a [JDBC driver](https://en.wikipedia.org/wiki/JDBC_driver) compliant with [JDBC 4.2](http://openjdk.java.net/jeps/170) or later. No need for strings, no need for `java.sql.*` classes.\r\n\r\nWhere to obtain the java.time classes? \r\n\r\n - [**Java SE 8**](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_8), [**Java SE 9**](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_9), [**Java SE 10**](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_10), and later\r\n  - Built-in. \r\n  - Part of the standard Java API with a bundled implementation.\r\n  - Java 9 adds some minor features and fixes.\r\n - [**Java SE 6**](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_6) and [**Java SE 7**](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_7)\r\n  - Much of the java.time functionality is back-ported to Java 6 &amp; 7 in [***ThreeTen-Backport***](http://www.threeten.org/threetenbp/).\r\n - [**Android**](https://en.wikipedia.org/wiki/Android_(operating_system))\r\n  - Later versions of Android bundle implementations of the java.time classes.\r\n  - For earlier Android (&lt;26), the [***ThreeTenABP***](https://github.com/JakeWharton/ThreeTenABP) project adapts [***ThreeTen-Backport***](http://www.threeten.org/threetenbp/) (mentioned above). See [*How to use ThreeTenABP…*](http://stackoverflow.com/q/38922754/642706).\r\n\r\nThe [**ThreeTen-Extra**](http://www.threeten.org/threeten-extra/) project extends java.time with additional classes. This project is a proving ground for possible future additions to java.time. You may find some useful classes here such as [`Interval`](http://www.threeten.org/threeten-extra/apidocs/org/threeten/extra/Interval.html), [`YearWeek`](http://www.threeten.org/threeten-extra/apidocs/org/threeten/extra/YearWeek.html), [`YearQuarter`](http://www.threeten.org/threeten-extra/apidocs/org/threeten/extra/YearQuarter.html), and [more](http://www.threeten.org/threeten-extra/apidocs/index.html).\r\n\r\n\r\n  [1]: https://en.wikipedia.org/wiki/ISO_8601\r\n  [2]: https://en.wikipedia.org/wiki/Coordinated_Universal_Time",
+      "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/50501489#50501489",
+      "title" : "How to convert UTC Date String and remove the T and Z in Java?",
+      "body" : "<h1>tl;dr</h1>\n\n<pre><code>Instant.parse( \"2018-05-23T23:18:31.000Z\" )                // Parse this String in standard ISO 8601 format as a `Instant`, a point on the timeline in UTC. The `Z` means UTC.\n.atOffset( ZoneOffset.UTC )                                // Change from `Instant` to the more flexible `OffsetDateTime`.\n.format(                                                   // Generate a String representing the value of this `OffsetDateTime` object.\n    DateTimeFormatter.ofPattern( \"uuuu-MM-dd HH:mm:ss\" )   // Specify a formatting pattern as desired.\n)                                                          // Returns a `String` object.\n</code></pre>\n\n<blockquote>\n  <p>2018-05-23 23:18:31</p>\n</blockquote>\n\n<h1>ISO 8601</h1>\n\n<p>Your input string is in standard <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" rel=\"noreferrer\">ISO 8601</a> format.</p>\n\n<p>The <em>java.time</em> classes use these standard formats by default when parsing/generating strings.</p>\n\n<p>The <code>T</code> separates the year-month-day portion from the hour-minute-second. The <code>Z</code> is pronounced <code>Zulu</code> and means <a href=\"https://en.wikipedia.org/wiki/Coordinated_Universal_Time\" rel=\"noreferrer\">UTC</a>.</p>\n\n<h1>java.time</h1>\n\n<p>You are using troublesome old date-time classes that were supplanted years ago by the <em>java.time</em> classes. The Apache <code>DateUtils</code> is also no longer needed, as you will find its functionality in <em>java.time</em> as well. </p>\n\n<p>Parse that input string as a <code>Instant</code> object. The <a href=\"http://docs.oracle.com/javase/10/docs/api/java/time/Instant.html\" rel=\"noreferrer\"><code>Instant</code></a> class represents a moment on the timeline in <a href=\"https://en.wikipedia.org/wiki/Coordinated_Universal_Time\" rel=\"noreferrer\">UTC</a> with a resolution of <a href=\"https://en.wikipedia.org/wiki/Nanosecond\" rel=\"noreferrer\">nanoseconds</a> (up to nine (9) digits of a decimal fraction). </p>\n\n<pre><code>String input = \"2018-05-23T23:18:31.000Z\" ;\nInstant instant = Instant.parse( input ) ;\n</code></pre>\n\n<p>To generate a string in another format, we need a more flexible object. The <code>Instant</code> class is meant to be a basic building block. Let<code>s convert it to a</code>OffsetDateTime`, using UTC itself as the specified offset-from-UTC.</p>\n\n<pre><code>OffsetDateTime odt = instant.atOffset( ZoneOffset.UTC ) ; \n</code></pre>\n\n<p>Define a formatting pattern to match your desired output.</p>\n\n<pre><code>DateTimeFormatter f = DateTimeFormatter.ofPattern( \"uuuu-MM-dd HH:mm:ss\" ) ;\nString output = odt.format( f ) ;\n</code></pre>\n\n<p>Tip: Consider using <code>DateTimeFormatter::ofLocalized…</code> methods to automatically localize the String generation per some <code>Locale</code> rather than hard-coding a formatting pattern.</p>\n\n<hr>\n\n<h1>About <em>java.time</em></h1>\n\n<p>The <a href=\"http://docs.oracle.com/javase/10/docs/api/java/time/package-summary.html\" rel=\"noreferrer\"><em>java.time</em></a> framework is built into Java 8 and later. These classes supplant the troublesome old <a href=\"https://en.wikipedia.org/wiki/Legacy_system\" rel=\"noreferrer\">legacy</a> date-time classes such as <a href=\"https://docs.oracle.com/javase/10/docs/api/java/util/Date.html\" rel=\"noreferrer\"><code>java.util.Date</code></a>, <a href=\"https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html\" rel=\"noreferrer\"><code>Calendar</code></a>, &amp; <a href=\"http://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html\" rel=\"noreferrer\"><code>SimpleDateFormat</code></a>.</p>\n\n<p>The <a href=\"http://www.joda.org/joda-time/\" rel=\"noreferrer\"><em>Joda-Time</em></a> project, now in <a href=\"https://en.wikipedia.org/wiki/Maintenance_mode\" rel=\"noreferrer\">maintenance mode</a>, advises migration to the <a href=\"http://docs.oracle.com/javase/10/docs/api/java/time/package-summary.html\" rel=\"noreferrer\">java.time</a> classes.</p>\n\n<p>To learn more, see the <a href=\"http://docs.oracle.com/javase/tutorial/datetime/TOC.html\" rel=\"noreferrer\"><em>Oracle Tutorial</em></a>. And search Stack Overflow for many examples and explanations. Specification is <a href=\"https://jcp.org/en/jsr/detail?id=310\" rel=\"noreferrer\">JSR 310</a>.</p>\n\n<p>You may exchange <em>java.time</em> objects directly with your database. Use a <a href=\"https://en.wikipedia.org/wiki/JDBC_driver\" rel=\"noreferrer\">JDBC driver</a> compliant with <a href=\"http://openjdk.java.net/jeps/170\" rel=\"noreferrer\">JDBC 4.2</a> or later. No need for strings, no need for <code>java.sql.*</code> classes.</p>\n\n<p>Where to obtain the java.time classes? </p>\n\n<ul>\n<li><a href=\"https://en.wikipedia.org/wiki/Java_version_history#Java_SE_8\" rel=\"noreferrer\"><strong>Java SE 8</strong></a>, <a href=\"https://en.wikipedia.org/wiki/Java_version_history#Java_SE_9\" rel=\"noreferrer\"><strong>Java SE 9</strong></a>, <a href=\"https://en.wikipedia.org/wiki/Java_version_history#Java_SE_10\" rel=\"noreferrer\"><strong>Java SE 10</strong></a>, and later\n\n<ul>\n<li>Built-in. </li>\n<li>Part of the standard Java API with a bundled implementation.</li>\n<li>Java 9 adds some minor features and fixes.</li>\n</ul></li>\n<li><a href=\"https://en.wikipedia.org/wiki/Java_version_history#Java_SE_6\" rel=\"noreferrer\"><strong>Java SE 6</strong></a> and <a href=\"https://en.wikipedia.org/wiki/Java_version_history#Java_SE_7\" rel=\"noreferrer\"><strong>Java SE 7</strong></a>\n\n<ul>\n<li>Much of the java.time functionality is back-ported to Java 6 &amp; 7 in <a href=\"http://www.threeten.org/threetenbp/\" rel=\"noreferrer\"><strong><em>ThreeTen-Backport</em></strong></a>.</li>\n</ul></li>\n<li><a href=\"https://en.wikipedia.org/wiki/Android_(operating_system)\" rel=\"noreferrer\"><strong>Android</strong></a>\n\n<ul>\n<li>Later versions of Android bundle implementations of the java.time classes.</li>\n<li>For earlier Android (&lt;26), the <a href=\"https://github.com/JakeWharton/ThreeTenABP\" rel=\"noreferrer\"><strong><em>ThreeTenABP</em></strong></a> project adapts <a href=\"http://www.threeten.org/threetenbp/\" rel=\"noreferrer\"><strong><em>ThreeTen-Backport</em></strong></a> (mentioned above). See <a href=\"http://stackoverflow.com/q/38922754/642706\"><em>How to use ThreeTenABP…</em></a>.</li>\n</ul></li>\n</ul>\n\n<p>The <a href=\"http://www.threeten.org/threeten-extra/\" rel=\"noreferrer\"><strong>ThreeTen-Extra</strong></a> project extends java.time with additional classes. This project is a proving ground for possible future additions to java.time. You may find some useful classes here such as <a href=\"http://www.threeten.org/threeten-extra/apidocs/org/threeten/extra/Interval.html\" rel=\"noreferrer\"><code>Interval</code></a>, <a href=\"http://www.threeten.org/threeten-extra/apidocs/org/threeten/extra/YearWeek.html\" rel=\"noreferrer\"><code>YearWeek</code></a>, <a href=\"http://www.threeten.org/threeten-extra/apidocs/org/threeten/extra/YearQuarter.html\" rel=\"noreferrer\"><code>YearQuarter</code></a>, and <a href=\"http://www.threeten.org/threeten-extra/apidocs/index.html\" rel=\"noreferrer\">more</a>.</p>\n"
+    }, {
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 11,
+          "silver" : 7,
+          "gold" : 0
+        },
+        "reputation" : 750,
+        "user_id" : 4936616,
+        "user_type" : "registered",
+        "profile_image" : "https://i.stack.imgur.com/1IFsX.jpg?s=128&g=1",
+        "display_name" : "Jose",
+        "link" : "https://stackoverflow.com/users/4936616/jose"
+      },
+      "can_flag" : false,
+      "comment_count" : 0,
+      "accepted" : false,
+      "downvoted" : false,
+      "upvoted" : false,
+      "down_vote_count" : 0,
+      "up_vote_count" : 0,
+      "is_accepted" : false,
+      "score" : 0,
+      "last_activity_date" : 1575343165,
+      "creation_date" : 1575343165,
+      "answer_id" : 59149713,
+      "question_id" : 50498949,
+      "share_link" : "https://stackoverflow.com/a/59149713/10803795",
+      "body_markdown" : "In Kotlin and using ThreeTenABP,\r\n\r\n```kotlin\r\nfun getIsoString(year: Int, month: Int, day: Int): String {\r\n    val localTime = ZonedDateTime.of(year, month, day, 0, 0, 0, 0, ZoneId.of(&quot;Z&quot;))\r\n\r\n    val utcTime = localTime.toOffsetDateTime().withOffsetSameInstant(ZoneOffset.UTC)\r\n\r\n    val isoString = utcTime.toInstant().toString() // 1940-15-12T00:00:00Z\r\n\r\n    val formattedIsoString = val formattedIsoString =\r\n        Instant.parse(isoString)\r\n            .atOffset(ZoneOffset.UTC)\r\n            .format(DateTimeFormatter\r\n                .ofPattern(&quot;uuuu-MM-dd&#39;T&#39;HH:mm:ss&quot;)) // &#39;T&#39; in quotes so that it is retained.\r\n    \r\n    return formattedIsoString\r\n}\r\n\r\n// print it\r\nprint(getIsoString(1940, 15, 12)) // 1940-15-12T00:00:00\r\n```",
+      "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java/59149713#59149713",
+      "title" : "How to convert UTC Date String and remove the T and Z in Java?",
+      "body" : "<p>In Kotlin and using ThreeTenABP,</p>\n\n<pre><code>fun getIsoString(year: Int, month: Int, day: Int): String {\n    val localTime = ZonedDateTime.of(year, month, day, 0, 0, 0, 0, ZoneId.of(\"Z\"))\n\n    val utcTime = localTime.toOffsetDateTime().withOffsetSameInstant(ZoneOffset.UTC)\n\n    val isoString = utcTime.toInstant().toString() // 1940-15-12T00:00:00Z\n\n    val formattedIsoString = val formattedIsoString =\n        Instant.parse(isoString)\n            .atOffset(ZoneOffset.UTC)\n            .format(DateTimeFormatter\n                .ofPattern(\"uuuu-MM-dd'T'HH:mm:ss\")) // 'T' in quotes so that it is retained.\n\n    return formattedIsoString\n}\n\n// print it\nprint(getIsoString(1940, 15, 12)) // 1940-15-12T00:00:00\n</code></pre>\n"
+    }],
+  "comments" : [{
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 74,
+          "silver" : 52,
+          "gold" : 7
+        },
+        "reputation" : 42240,
+        "user_id" : 5772882,
+        "user_type" : "registered",
+        "profile_image" : "https://i.stack.imgur.com/58mlb.png?s=128&g=1",
+        "display_name" : "Ole V.V.",
+        "link" : "https://stackoverflow.com/users/5772882/ole-v-v"
+      },
+      "upvoted" : false,
+      "edited" : false,
+      "score" : 0,
+      "post_type" : "question",
+      "creation_date" : 1527135413,
+      "post_id" : 50498949,
+      "comment_id" : 88014271,
+      "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java#comment88014271_50498949"
+    }, {
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 74,
+          "silver" : 52,
+          "gold" : 7
+        },
+        "reputation" : 42240,
+        "user_id" : 5772882,
+        "user_type" : "registered",
+        "profile_image" : "https://i.stack.imgur.com/58mlb.png?s=128&g=1",
+        "display_name" : "Ole V.V.",
+        "link" : "https://stackoverflow.com/users/5772882/ole-v-v"
+      },
+      "upvoted" : false,
+      "edited" : false,
+      "score" : 0,
+      "post_type" : "question",
+      "creation_date" : 1527135684,
+      "post_id" : 50498949,
+      "comment_id" : 88014343,
+      "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java#comment88014343_50498949"
+    }, {
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 74,
+          "silver" : 52,
+          "gold" : 7
+        },
+        "reputation" : 42240,
+        "user_id" : 5772882,
+        "user_type" : "registered",
+        "profile_image" : "https://i.stack.imgur.com/58mlb.png?s=128&g=1",
+        "display_name" : "Ole V.V.",
+        "link" : "https://stackoverflow.com/users/5772882/ole-v-v"
+      },
+      "upvoted" : false,
+      "edited" : false,
+      "score" : 1,
+      "post_type" : "question",
+      "creation_date" : 1527135967,
+      "post_id" : 50498949,
+      "comment_id" : 88014408,
+      "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java#comment88014408_50498949"
+    }, {
+      "owner" : {
+        "badge_counts" : {
+          "bronze" : 663,
+          "silver" : 476,
+          "gold" : 39
+        },
+        "reputation" : 148280,
+        "user_id" : 642706,
+        "user_type" : "registered",
+        "accept_rate" : 58,
+        "profile_image" : "https://i.stack.imgur.com/ZWEI3.jpg?s=128&g=1",
+        "display_name" : "Basil Bourque",
+        "link" : "https://stackoverflow.com/users/642706/basil-bourque"
+      },
+      "upvoted" : false,
+      "edited" : false,
+      "score" : 1,
+      "post_type" : "question",
+      "creation_date" : 1527138870,
+      "post_id" : 50498949,
+      "comment_id" : 88015171,
+      "link" : "https://stackoverflow.com/questions/50498949/how-to-convert-utc-date-string-and-remove-the-t-and-z-in-java#comment88015171_50498949"
+    }]
+}]
